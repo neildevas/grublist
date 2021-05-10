@@ -1,9 +1,9 @@
-import React from "react"
+import React from "react";
 
 interface Props {
-  text: string
+  text: string;
 }
 
 const HelloWorld: React.FC<Props> = ({ text }) => <div>Hello {text}</div>
 
-export default HelloWorld
+export default HelloWorld;
