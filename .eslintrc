@@ -28,6 +28,11 @@
     "jsx-quotes": [
       "error", "prefer-single"
     ],
+    "quotes": [
+      "error",
+      "single",
+      { "avoidEscape": true, "allowTemplateLiterals": false }
+    ],
     "max-len": [
       "error",
       120,

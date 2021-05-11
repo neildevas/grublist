@@ -1,6 +1,6 @@
-import React from "react"
-import "./App.css"
-import HelloWorld from "./HelloWorld"
+import React from 'react'
+import './App.css'
+import HelloWorld from './HelloWorld'
 
 function App() {
   return (
