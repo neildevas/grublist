@@ -4,9 +4,9 @@ import HelloWorld from "./HelloWorld"
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <HelloWorld text="World!" />
+    <div className='App'>
+      <header className='App-header'>
+        <HelloWorld text='World!' />
       </header>
     </div>
   )
