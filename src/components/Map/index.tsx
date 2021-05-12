@@ -3,7 +3,7 @@ import mapboxgl from 'mapbox-gl';
 
 mapboxgl.accessToken = 'pk.eyJ1IjoibmVpbGpvc2VwaCIsImEiOiJja2Vzb2F4cmoxbzFyMnJwbmVyNmRnNDB6In0.jxxscSeTyrVfxCQnWZTYLw';
 
-export default function Index() {
+export default function Map() {
   const mapContainer = useRef<HTMLDivElement>(null);
   const map = useRef<mapboxgl.Map>();
   const [lng] = useState(-73.7508592);
