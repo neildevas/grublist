@@ -4,3 +4,9 @@
 .map-container {
     height: 100vh
 }
+
+@layer components {
+    .pac-container {
+        @apply bg-red-400 w-full
+    }
+}

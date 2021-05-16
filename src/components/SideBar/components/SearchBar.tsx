@@ -1,17 +1,20 @@
 import React, { useState } from 'react';
-import { useJsApiLoader, Autocomplete, StandaloneSearchBox } from '@react-google-maps/api'
+import { useJsApiLoader, Autocomplete, StandaloneSearchBox, useGoogleMap } from '@react-google-maps/api'
 
+const LIBRARIES = ['places'];
 const SideBar: React.FC = () => {
   const [autocomplete, setAutocomplete] = useState(null);
+
   const { isLoaded, loadError } = useJsApiLoader({
     googleMapsApiKey: 'AIzaSyD8mBsmIMZf0tr6COrYV1KShJjkcnVtzDk',
-    libraries: ['places']
+    libraries: LIBRARIES,
   });
+
+  const { google } = window;
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     console.log('TYPED', e.target.value);
   };
   const onLoad =  (autocompleteInstance) => {
-    console.log('autocomplete: ', autocomplete);
     setAutocomplete(autocompleteInstance)
   };
   const onPlaceChanged = () => {
@@ -25,8 +28,8 @@ const SideBar: React.FC = () => {
     return <div>{loadError}</div>
   }
   return (
-    <div className='w-full rounded-2xl p-3 bg-white flex flex-row justify-between items-center shadow-sm'>
-      <Autocomplete onPlaceChanged={onPlaceChanged} onLoad={onLoad}>
+    <div className='w-full rounded-2xl p-3 bg-white flex flex-row justify-between items-center shadow-sm relative'>
+      <Autocomplete onPlaceChanged={onPlaceChanged} onLoad={onLoad} className='w-full bg-blue'>
         <input placeholder='Search' className='w-full outline-none' onChange={onChange} />
       </Autocomplete>
       <button className='focus:outline-none' type='button'>
